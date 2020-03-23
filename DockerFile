@@ -37,9 +37,6 @@ RUN git clone https://github.com/llfl/openpose
 RUN cd openpose && mkdir -p build && cd build \
     && /cmake-3.16.5-Linux-x86_64/bin/cmake -DCMAKE_BUILD_TYPE=Release .. && make -j"$(nproc)"
 
-COPY lenet_iter_10000.caffemodel /openpose/models
-COPY pose_iter_584000.caffemodel /openpose/models/pose/body_25
-
 # RUN cd openpose/models && ./getModels.sh
 
 WORKDIR /openpose

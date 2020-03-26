@@ -1,7 +1,7 @@
-FROM nvidia/cuda:10.2-cudnn7-runtime-ubuntu18.04
+FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
 MAINTAINER i@imux.top
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get clean && apt-get update && apt-get install -y \
       build-essential \
       git \
       libgtk2.0-dev \ 
@@ -23,6 +23,8 @@ RUN apt-get update && apt-get install -y \
       protobuf-compiler \
       zip \
       wget \
+      python-pip \
+      python-dev \
     && rm -rf /var/lib/apt/lists/*
 RUN pip install --upgrade pip
 

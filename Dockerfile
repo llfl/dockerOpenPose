@@ -48,4 +48,4 @@ RUN mv /lenet_iter_10000.caffemodel /openpose/models
 
 WORKDIR /openpose
 
-CMD ./build/examples/user_code/magicstick2.bin
+CMD ./build/examples/user_code/magicstick2.bin --video ../data/input.mp4 --no_gui_verbose --display 0 --write_video ../data/output.mp4

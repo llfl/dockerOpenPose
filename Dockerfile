@@ -25,6 +25,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       wget \
       python-pip \
       python-dev \
+      ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 RUN pip install --upgrade pip
 

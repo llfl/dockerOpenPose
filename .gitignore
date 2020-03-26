@@ -5,3 +5,4 @@ opencv
 cmake
 4.2.0.zip
 *.caffemodel
+.DS_Store

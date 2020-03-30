@@ -46,6 +46,10 @@ RUN cd openpose && mkdir -p build && cd build \
 
 RUN mv /lenet_iter_10000.caffemodel /openpose/models
 
+ADD ./startup.sh /
+
 WORKDIR /openpose
+
+ENTRYPOINT ["/startup.sh"]
 
 CMD ./build/examples/user_code/magicstick2.bin --video ../data/input.mp4 --no_gui_verbose --display 0 --write_video ../data/output.mp4

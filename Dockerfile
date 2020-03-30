@@ -51,5 +51,5 @@ ADD ./startup.sh /
 WORKDIR /openpose
 
 ENTRYPOINT ["/startup.sh"]
-
-CMD ./build/examples/user_code/magicstick2.bin --video ../data/input.mp4 --no_gui_verbose --display 0 --write_video ../data/output.mp4
+CMD [ "/bin/bash" ]
+# CMD ./build/examples/user_code/magicstick2.bin --video ../data/input.mp4 --no_gui_verbose --display 0 --write_video ../data/output.mp4

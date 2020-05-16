@@ -45,7 +45,7 @@ RUN cd openpose && mkdir -p build && cd build \
     && /cmake/bin/cmake -DCMAKE_BUILD_TYPE=Release .. && make -j"$(nproc)" && make install 
 
 WORKDIR /openpose
-
+ 
 # ENTRYPOINT ["/startup.sh"]
 CMD [ "/bin/bash" ]
 # CMD ./build/examples/user_code/magicstick2.bin --video ../data/input.mp4 --no_gui_verbose --display 0 --write_video ../data/output.mp4

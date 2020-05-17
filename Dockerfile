@@ -35,13 +35,13 @@ RUN wget https://github.com/Kitware/CMake/releases/download/v3.17.0/cmake-3.17.0
 RUN wget https://github.com/opencv/opencv/archive/4.2.0.zip
 
 RUN unzip /4.2.0.zip && cd opencv-4.2.0 && mkdir -p build && cd build \
-    && /cmake/bin/cmake -DCMAKE_BUILD_TYPE=Release -DDOWNLOAD_BODY_25_MODEL=OFF -DDOWNLOAD_FACE_MODEL=OFF -DDOWNLOAD_HAND_MODEL=OFF -DBUILD_EXAMPLES=OFF .. && make -j"$(nproc)" \
+    && /cmake/bin/cmake -DCMAKE_BUILD_TYPE=Release .. && make -j"$(nproc)" \
     && make install
 
 
 RUN git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose
 RUN cd openpose && mkdir -p build && cd build \
-    && /cmake/bin/cmake -DCMAKE_BUILD_TYPE=Release .. && make -j"$(nproc)" && make install 
+    && /cmake/bin/cmake -DCMAKE_BUILD_TYPE=Release -DDOWNLOAD_BODY_25_MODEL=OFF -DDOWNLOAD_FACE_MODEL=OFF -DDOWNLOAD_HAND_MODEL=OFF -DBUILD_EXAMPLES=OFF .. && make -j"$(nproc)" && make install 
 
 RUN rm /4.2.0.zip && rm -rf /opencv-4.2.0 && rm -rf openpose && mkdir /openpose
 

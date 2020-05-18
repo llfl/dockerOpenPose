@@ -30,8 +30,6 @@
 
 **注：应当事先安装好cuda或者nvidia驱动**
 
-### demo运行
+### 编译openpose
 
-install之后将拍摄好的视频放入该文件夹内，运行./run_video.sh demo.mp4 其中demo.mp4为所需运行的视频文件
-
-程序运行之后会在本目录生成output.mp4的输出文件 预测结果将在控制台显示。
+该镜像是包含openpose编译的各种库，包括cuda、caffe、opencv等。
